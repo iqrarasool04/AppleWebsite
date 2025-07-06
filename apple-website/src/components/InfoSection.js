@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import image from "../assets/image.png";
 
-// Styled Components
 const SectionWrapper = styled.div`
   background-color: black;
   width: 100%;
@@ -100,7 +99,6 @@ const StackedImages = styled.div`
   height: 200vh;
 `;
 
-// Main Component
 const InfoSection = () => {
   const sectionRef = useRef(null);
   const [showText, setShowText] = useState(true);

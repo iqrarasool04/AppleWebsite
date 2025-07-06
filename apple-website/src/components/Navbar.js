@@ -11,7 +11,7 @@ const Nav = styled.nav`
   color: white;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 999;
 `;
 
 const NavLeft = styled.div`
