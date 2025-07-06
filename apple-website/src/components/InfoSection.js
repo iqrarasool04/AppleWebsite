@@ -22,6 +22,13 @@ const StickyContent = styled.div`
   padding-left: 5vw;
   z-index: 2;
   pointer-events: none;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    padding-left: 0;
+    padding: 1rem;
+    text-align: center;
+  }
 `;
 
 const Container = styled.div`
@@ -29,6 +36,10 @@ const Container = styled.div`
   margin: 15px;
   padding: 2rem;
   pointer-events: all;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+  }
 `;
 
 const SubHeaderHolder = styled.div`
@@ -37,6 +48,18 @@ const SubHeaderHolder = styled.div`
   font-weight: bold;
   line-height: 1;
   margin-bottom: 20px;
+
+  @media (max-width: 1024px) {
+    font-size: 6rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 4rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const SubHeader = styled.div`
@@ -47,12 +70,27 @@ const InfoParagraph = styled.p`
   color: #000;
   font-size: ${(props) => (props.small ? "1.5rem" : "1.75rem")};
   margin: 0.5rem 0;
+
+  @media (max-width: 768px) {
+    font-size: ${(props) => (props.small ? "1rem" : "1.2rem")};
+  }
+
+  @media (max-width: 480px) {
+    font-size: ${(props) => (props.small ? "0.9rem" : "1rem")};
+  }
 `;
 
 const LinkHolder = styled.div`
   display: flex;
   gap: 2rem;
   margin-top: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    gap: 1rem;
+  }
 `;
 
 const LinksContainer = styled.div`
@@ -66,11 +104,24 @@ const LinksContainer = styled.div`
   &:hover {
     opacity: 0.8;
   }
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 const LinkIcon = styled.img`
   width: 24px;
   height: 24px;
+
+  @media (max-width: 480px) {
+    width: 18px;
+    height: 18px;
+  }
 `;
 
 const IntroImage = styled.img`
@@ -81,6 +132,18 @@ const IntroImage = styled.img`
 
   &.flipped {
     transform: scaleY(-1);
+  }
+
+  @media (max-width: 1024px) {
+    height: 700px;
+  }
+
+  @media (max-width: 768px) {
+    height: 500px;
+  }
+
+  @media (max-width: 480px) {
+    height: 350px;
   }
 `;
 
@@ -130,7 +193,9 @@ const InfoSection = () => {
               <SubHeader>Pro.</SubHeader>
               <SubHeader>Beyond</SubHeader>
             </SubHeaderHolder>
-            <InfoParagraph>iPhone 14 Pro and iPhone 14 Pro Max</InfoParagraph>
+            <InfoParagraph>
+              iPhone 14 Pro and iPhone 14 Pro Max
+            </InfoParagraph>
             <InfoParagraph small>
               From $41.62/mo. for 24 mo. or $999 before trade-in
             </InfoParagraph>
@@ -165,4 +230,3 @@ const InfoSection = () => {
 };
 
 export default InfoSection;
-

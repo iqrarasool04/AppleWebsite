@@ -7,6 +7,8 @@ import img3 from "../assets/image3.jpeg";
 import img4 from "../assets/image4.jpeg";
 import img5 from "../assets/image5.jpeg";
 
+// ...imports
+
 const Section = styled.section`
   background-color: black;
   color: white;
@@ -26,6 +28,20 @@ const LargeText = styled.div`
   line-height: 1.2;
   color: #cecece;
   margin-bottom: 5rem;
+
+  @media (max-width: 1024px) {
+    font-size: 4rem;
+    text-indent: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+    text-indent: 0;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2.2rem;
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -33,6 +49,14 @@ const ImageWrapper = styled.div`
   width: 100%;
   max-width: 1200px;
   height: 600px;
+
+  @media (max-width: 768px) {
+    height: 500px;
+  }
+
+  @media (max-width: 480px) {
+    height: 400px;
+  }
 `;
 
 const Img = styled.img`
@@ -45,6 +69,24 @@ const Img1 = styled(Img)`
   height: 450px;
   left: 130px;
   top: 50px;
+
+  @media (max-width: 1024px) {
+    width: 220px;
+    height: 330px;
+    left: 80px;
+  }
+
+  @media (max-width: 768px) {
+    width: 180px;
+    height: 270px;
+    left: 40px;
+  }
+
+  @media (max-width: 480px) {
+    width: 130px;
+    height: 200px;
+    left: 10px;
+  }
 `;
 
 const MotionImg2Wrapper = styled.div`
@@ -55,6 +97,24 @@ const MotionImg2Wrapper = styled.div`
   width: 350px;
   height: 530px;
   overflow: visible;
+
+  @media (max-width: 1024px) {
+    width: 260px;
+    height: 400px;
+    left: 28%;
+  }
+
+  @media (max-width: 768px) {
+    width: 220px;
+    height: 340px;
+    left: 25%;
+  }
+
+  @media (max-width: 480px) {
+    width: 180px;
+    height: 270px;
+    left: 20%;
+  }
 `;
 
 const MotionImg2 = styled(motion.img)`
@@ -69,6 +129,24 @@ const Img3 = styled(Img)`
   left: 650px;
   top: 0;
   z-index: 4;
+
+  @media (max-width: 1024px) {
+    width: 220px;
+    height: 300px;
+    left: 60%;
+  }
+
+  @media (max-width: 768px) {
+    width: 180px;
+    height: 250px;
+    left: 60%;
+  }
+
+  @media (max-width: 480px) {
+    width: 130px;
+    height: 180px;
+    left: 60%;
+  }
 `;
 
 const MotionImg4 = styled(motion.img)`
@@ -80,6 +158,20 @@ const MotionImg4 = styled(motion.img)`
   z-index: 1;
   transform: translateX(75%);
   object-fit: cover;
+
+  @media (max-width: 768px) {
+    width: 180px;
+    height: 140px;
+    right: 100px;
+    top: 180px;
+  }
+
+  @media (max-width: 480px) {
+    width: 140px;
+    height: 100px;
+    right: 60px;
+    top: 150px;
+  }
 `;
 
 const ContentSection = styled.div`
@@ -91,6 +183,12 @@ const ContentSection = styled.div`
   width: 100%;
   padding: 6rem 2rem;
   margin-top: 8rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
 `;
 
 const MotionTextBlock = styled(motion.div)`
@@ -102,6 +200,23 @@ const MotionTextBlock = styled(motion.div)`
   margin-left: 8rem;
   font-family: 'SF Pro', sans-serif;
   font-weight: 500;
+
+  @media (max-width: 1024px) {
+    margin-left: 4rem;
+    padding-top: 20rem;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    padding-top: 0;
+    font-size: 1.6rem;
+    margin-top: 10rem; /* 
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.4rem;
+    margin-top: 10rem; 
+  }
 `;
 
 const MotionImg5 = styled(motion.img)`
@@ -109,6 +224,17 @@ const MotionImg5 = styled(motion.img)`
   height: 200px;
   object-fit: cover;
   margin-right: 5rem;
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+    width: 220px;
+    height: 160px;
+  }
+
+  @media (max-width: 480px) {
+    width: 180px;
+    height: 120px;
+  }
 `;
 
 const VersatilitySection = () => {

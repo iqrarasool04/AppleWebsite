@@ -12,18 +12,49 @@ const Section = styled.div`
   background-color: black;
   color: white;
   flex-wrap: wrap;
+
+  @media (max-width: 1024px) {
+    padding: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 2rem;
+    text-align: center;
+  }
 `;
 
 const LeftContent = styled.div`
   flex: 1;
   max-width: 600px;
   margin-left: 5rem;
+
+  @media (max-width: 1024px) {
+    margin-left: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    max-width: 100%;
+  }
 `;
 
 const Line = styled.h1`
   font-size: 5rem;
   margin: 0.5rem 0;
   font-weight: bold;
+
+  @media (max-width: 1024px) {
+    font-size: 4rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2.2rem;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -31,6 +62,18 @@ const Paragraph = styled.p`
   margin-top: 1.5rem;
   line-height: 1.4;
   color: #999;
+
+  @media (max-width: 1024px) {
+    font-size: 1.6rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.4rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const RightContent = styled.div`
@@ -38,6 +81,16 @@ const RightContent = styled.div`
   max-width: 400px;
   margin-right: 5rem;
   text-align: center;
+
+  @media (max-width: 1024px) {
+    margin-right: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    margin-right: 0;
+    margin-top: 2rem;
+    max-width: 100%;
+  }
 `;
 
 const RightImage = styled.img`
@@ -45,6 +98,11 @@ const RightImage = styled.img`
   height: auto;
   object-fit: cover;
   margin-bottom: 1.5rem;
+  border-radius: 1rem;
+
+  @media (max-width: 480px) {
+    border-radius: 0.75rem;
+  }
 `;
 
 const ArrowsContainer = styled.div`
@@ -66,6 +124,12 @@ const ArrowButton = styled.button`
 
   &:hover {
     background-color: #444;
+  }
+
+  @media (max-width: 480px) {
+    width: 45px;
+    height: 45px;
+    font-size: 1.4rem;
   }
 `;
 

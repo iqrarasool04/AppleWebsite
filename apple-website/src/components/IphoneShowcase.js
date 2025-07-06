@@ -20,6 +20,14 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding-top: 10rem;
+  }
+
+  @media (max-width: 480px) {
+    padding-top: 6rem;
+  }
 `;
 
 const RowWrapper = styled.div`
@@ -28,12 +36,27 @@ const RowWrapper = styled.div`
   justify-content: center;
   gap: 2rem;
   flex-wrap: nowrap;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 3rem;
+  }
 `;
 
 const ImageWrapper = styled.div`
   width: 500px;
   height: 800px;
   position: relative;
+
+  @media (max-width: 1024px) {
+    width: 350px;
+    height: 600px;
+  }
+
+  @media (max-width: 480px) {
+    width: 280px;
+    height: 450px;
+  }
 `;
 
 const IphoneImage = styled.img`
@@ -51,6 +74,16 @@ const ColorOptions = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+
+  @media (max-width: 1024px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  @media (max-width: 480px) {
+    gap: 0.6rem;
+  }
 `;
 
 const ColorName = styled.div`
@@ -58,6 +91,14 @@ const ColorName = styled.div`
   color: ${(props) => (props.active ? "#ffffff" : "#aaaaaa")};
   transition: color 0.5s ease;
   font-weight: 600;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 const Description = styled.div`
@@ -65,8 +106,19 @@ const Description = styled.div`
   font-size: 2rem;
   color: #ccc;
   line-height: 1.4;
-  font-weight: 600; 
+  font-weight: 600;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+    padding: 0 1rem;
+  }
 `;
 
 const IphoneShowcase = () => {
@@ -106,9 +158,9 @@ const IphoneShowcase = () => {
       <Description>
         <p>Designed for durability.</p>
         <p>
-          With Ceramic Shield, tougher than any <br/>smartphone glass.
-          Water resistance. <br/>Surgical-grade stainless steel.
-          6.1" and <br/>6.7" display sizes. All in four Pro <br/>colors.
+          With Ceramic Shield, tougher than any <br /> smartphone glass.
+          Water resistance. <br /> Surgical-grade stainless steel.
+          6.1" and <br /> 6.7" display sizes. All in four Pro <br /> colors.
         </p>
       </Description>
     </Container>

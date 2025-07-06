@@ -12,28 +12,42 @@ const Section = styled.div`
   background-color: black;
   color: white;
   height: 150vh;
+  padding: 2rem;
+
+  @media (max-width: 1024px) {
+    height: auto;
+    padding: 4rem 2rem;
+  }
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
   max-width: 1200px;
   width: 100%;
+  gap: 3rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
 `;
 
 const ImageContainer = styled.div`
   flex: 1;
   margin-left: 8rem;
   position: relative;
+  display: flex;
+  justify-content: center;
 
   .screen-overlay {
     position: absolute;
-    left: 2%;
     width: 73%;
     height: 100%;
     object-fit: cover;
     border-radius: 1rem;
     pointer-events: none;
-    z-index: 1; /* Behind phone */
+    z-index: 1;
   }
 
   img.phone {
@@ -42,7 +56,43 @@ const ImageContainer = styled.div`
     border-radius: 1rem;
     display: block;
     position: relative;
-    z-index: 2; /* In front */
+    z-index: 2;
+  }
+
+  @media (max-width: 1024px) {
+    margin-left: 0;
+
+    .screen-overlay {
+    left: 10%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    img.phone {
+      max-width: 80%;
+    }
+
+    .screen-overlay {
+      width: 80%;
+      left: 11%;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 1023px) {
+    .screen-overlay {
+      left: 13%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    img.phone {
+      max-width: 100%;
+    }
+
+    .screen-overlay {
+      width: 90%;
+      left: 11%;
+    }
   }
 `;
 
@@ -52,12 +102,26 @@ const TextContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 4rem;
+
+  @media (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
 `;
 
 const AnimatedText = styled(motion.div)`
   font-size: 1.75rem;
   line-height: 1.4;
   opacity: 0;
+
+  @media (max-width: 1024px) {
+    font-size: 1.4rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const GradientText = styled.span`
@@ -66,13 +130,29 @@ const GradientText = styled.span`
   -webkit-text-fill-color: transparent;
   font-weight: bold;
   font-size: 1.75rem;
+
+  @media (max-width: 1024px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.3rem;
+  }
 `;
 
 const SubText = styled.span`
   color: #86868b;
   font-size: 1.2rem;
-  line-height: 1.2; 
+  line-height: 1.2;
   display: inline-block;
+
+  @media (max-width: 1024px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
 `;
 
 const ScrollText = ({ children }) => {
@@ -111,10 +191,14 @@ const ScrollRevealText = () => {
 
         <TextContainer>
           <ScrollText>
-            Now your Lock Screen is always <br /> glanceable, so you don't even <br />have to tap it to stay in the know.
+            Now your Lock Screen is always <br />
+            glanceable, so you don't even <br />
+            have to tap it to stay in the know.
           </ScrollText>
           <ScrollText>
-            When iPhone is turned face <br />down or in your pocket, it goes <br />dark to save battery life.
+            When iPhone is turned face <br />
+            down or in your pocket, it goes <br />
+            dark to save battery life.
           </ScrollText>
           <ScrollText>
             <GradientText>All-day battery life</GradientText>

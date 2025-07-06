@@ -26,11 +26,12 @@ const Text = styled(motion.h1)`
   max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
+  line-height: 1.2;
+  text-align: center;
 
   background-image: 
     url(${image}), 
     url(${image}); 
-    
   background-repeat: no-repeat;
   background-size: cover, cover;
   background-position: top center, bottom center;
@@ -43,7 +44,6 @@ const Text = styled(motion.h1)`
   position: relative;
   z-index: 3;
 
-  /* Mirror effect for the second background */
   &::before {
     content: "";
     position: absolute;
@@ -58,11 +58,21 @@ const Text = styled(motion.h1)`
     -webkit-text-fill-color: transparent;
     z-index: -1;
   }
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+    padding: 0 10px;
+  }
 `;
 
 const TextWrapper = styled.div`
   position: relative;
   display: inline-block;
+  padding: 0 1rem;
 
   &::before {
     content: "";
@@ -95,16 +105,15 @@ const FeatureTextSection = () => {
     <Container ref={ref}>
       <StickySection>
         <TextWrapper>
-            <Text style={{ backgroundPositionY: bgY }}>
+          <Text style={{ backgroundPositionY: bgY }}>
             A magical new way to interact with iPhone. Groundbreaking safety
             features designed to save lives. An innovative 48MP camera for
             mind-blowing detail. All powered by the ultimate smartphone chip.
-            </Text>
+          </Text>
         </TextWrapper>
-       </StickySection>
+      </StickySection>
     </Container>
   );
 };
 
 export default FeatureTextSection;
-

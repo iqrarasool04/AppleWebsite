@@ -5,7 +5,6 @@ import videoFile from "../assets/emergencyContact.mp4";
 
 const Section = styled.section`
   background: black;
-  
 `;
 
 const ScrollContainer = styled.div`
@@ -46,6 +45,20 @@ const TextOverlay = styled(motion.div)`
   font-weight: bold;
   line-height: 1.1;
   font-family: 'SF Pro', sans-serif;
+  text-align: center;
+  padding: 0 1rem;
+
+  @media (max-width: 1024px) {
+    font-size: 4rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
 `;
 
 const TopLeftText = styled(motion.div)`
@@ -57,19 +70,47 @@ const TopLeftText = styled(motion.div)`
   font-weight: bold;
   line-height: 1.2;
   z-index: 0;
+
+  @media (max-width: 1024px) {
+    font-size: 3.5rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+    left: 8%;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.8rem;
+    left: 5%;
+  }
 `;
 
 const BottomTextContainer = styled(motion.div)`
   height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
   color: #cecece;
   font-size: 6rem;
   font-weight: bold;
   font-family: 'SF Pro', sans-serif;
-  margin-top: -87px; 
+  margin-top: -87px;
   z-index: 2;
   position: relative;
+  padding: 0 1rem;
+
+  @media (max-width: 1024px) {
+    font-size: 4rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 3rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 2rem;
+  }
 `;
 
 const BottomTextWrapper = styled.div`
@@ -81,6 +122,18 @@ const BottomParagraph = styled.p`
   font-weight: normal;
   margin-top: 1rem;
   color: #aaa;
+
+  @media (max-width: 1024px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+  }
 `;
 
 const SatelliteSection = () => {
@@ -122,10 +175,12 @@ const SatelliteSection = () => {
 
       <BottomTextContainer style={{ opacity: topLeftOpacity, y: topLeftY }}>
         <BottomTextWrapper>
-            Peace of<br />mind when<br />you're off the<br />grid.
-            <BottomParagraph>
-            If you don't have cell service or Wi-Fi,<br/>iPhone lets you text emmergeny<br/>services over satellite.
-            </BottomParagraph>
+          Peace of<br />mind when<br />you're off the<br />grid.
+          <BottomParagraph>
+            If you don't have cell service or Wi-Fi,<br />
+            iPhone lets you text emergency<br />
+            services over satellite.
+          </BottomParagraph>
         </BottomTextWrapper>
       </BottomTextContainer>
     </Section>

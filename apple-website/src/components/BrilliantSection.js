@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import iphone4 from "../assets/iphone4.jpeg"; 
+import iphone4 from "../assets/iphone4.jpeg";
 
 const Section = styled.div`
   background-color: black;
@@ -23,6 +23,22 @@ const SmallText = styled.p`
   color: #aaa;
   margin-left: 12rem;
   margin-bottom: 0;
+
+  @media (max-width: 1024px) {
+    font-size: 2rem;
+    margin-left: 6rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.6rem;
+    margin-left: 3rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.3rem;
+    margin-left: 1rem;
+    text-align: center;
+  }
 `;
 
 const LargeText = styled.h1`
@@ -35,6 +51,18 @@ const LargeText = styled.h1`
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+
+  @media (max-width: 1024px) {
+    font-size: 8rem;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 3.5rem;
+  }
 `;
 
 const Image = styled.img`
@@ -42,13 +70,21 @@ const Image = styled.img`
   max-width: 1500px;
   height: auto;
   margin-top: 1rem;
+
+  @media (max-width: 768px) {
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    margin-top: 1.5rem;
+  }
 `;
 
 const BrilliantSection = () => {
   return (
     <Section>
       <Content>
-        <SmallText>A display that's up to<br/>2x brighter in the sun.</SmallText>
+        <SmallText>A display that's up to<br />2x brighter in the sun.</SmallText>
         <LargeText>Brilliant.</LargeText>
         <Image src={iphone4} alt="iphone4" />
       </Content>

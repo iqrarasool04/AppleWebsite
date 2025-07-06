@@ -22,11 +22,22 @@ const Box = styled.div`
   height: 300px;
   display: flex;
   overflow: hidden;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    height: auto;
+  }
 `;
 
 const SmallBox = styled(Box)`
   height: 140px;
   margin-top: 3rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: auto;
+    padding: 1.5rem 1rem;
+  }
 `;
 
 const Left = styled.div`
@@ -35,6 +46,12 @@ const Left = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-left: 2rem;
+
+  @media (max-width: 768px) {
+    padding: 1rem;
+    align-items: center;
+    text-align: center;
+  }
 `;
 
 const Left1 = styled.div`
@@ -42,6 +59,12 @@ const Left1 = styled.div`
   flex: 1 1 80%;
   margin-top: 2rem;
   margin-left: 2rem;
+
+  @media (max-width: 768px) {
+    margin: 0;
+    justify-content: center;
+    text-align: center;
+  }
 `;
 
 const Heading = styled.h2`
@@ -49,6 +72,10 @@ const Heading = styled.h2`
   color: white;
   margin-bottom: 1.5rem;
   font-weight: 500;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const ButtonWrapper = styled.div`
@@ -80,10 +107,10 @@ const Button = styled.button`
   font-size: 1rem;
   cursor: pointer;
   border: none;
-  display: inline-block;
 
-  &:hover {
-    background-color: #1a1a1a;
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.2rem;
   }
 `;
 
@@ -94,6 +121,13 @@ const Right = styled.div`
   grid-template-rows: 1fr 1fr;
   gap: 1rem;
   height: 100%;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 150px);
+    gap: 0.5rem;
+    padding: 1rem;
+  }
 `;
 
 const Right1 = styled.div`
@@ -103,6 +137,10 @@ const Right1 = styled.div`
   align-items: center;
   justify-content: center;
   margin-right: 2rem;
+
+  @media (max-width: 768px) {
+    margin: 1rem 0 0 0;
+  }
 `;
 
 const MotionImg = styled(motion.img)`
@@ -125,7 +163,6 @@ const TemplateSection = () => {
 
   return (
     <Section>
-      {/* First box with scroll animation */}
       <Box ref={boxRef}>
         <Left>
           <Heading>Take a look at our amazing premium Webflow Templates</Heading>
@@ -145,10 +182,12 @@ const TemplateSection = () => {
         </Right>
       </Box>
 
-      {/* Second smaller box without animation */}
       <SmallBox>
         <Left1>
-          <Heading>If you are looking for more free and premium Webflow templates, fell<br/>free to take a look on</Heading>
+          <Heading>
+            If you are looking for more free and premium Webflow templates,<br />
+            feel free to take a look on
+          </Heading>
         </Left1>
         <Right1>
           <ButtonWrapper>
